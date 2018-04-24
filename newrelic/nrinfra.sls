@@ -1,7 +1,7 @@
 add_infra_licence_key:
   file.append:
     - name: /etc/newrelic-infra.yml
-    - text: "licence_key: {{ salt['pillar.get']('newrelic:apikey', '') }}"
+    - text: "license_key: {{ salt['pillar.get']('newrelic:apikey', '') }}"
 
 newrelic-infra:
   pkg:

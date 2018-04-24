@@ -1,3 +1,9 @@
+install gpg depedencies:
+  pkg.installed:
+    - pkgs:
+      - python-gpg
+      - gpg
+
 add_infra_licence_key:
   file.append:
     - name: /etc/newrelic-infra.yml

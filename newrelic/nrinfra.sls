@@ -27,9 +27,6 @@ add_infra_licence_key:
 newrelic-infra:
   pkg:
     - installed
-    - require:
-      - file: add_infra_licence_key
-      - module: get_newrelicinfra_gpg_key
   service.running:
     - watch:
         - pkg: newrelic-infra

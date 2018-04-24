@@ -2,4 +2,7 @@ newrelic:
   apikey: 803117443ae24ef58f4cc149d8b3dba7
   appname: myphpapp
   explain_enable: false
+  # install agent for New Relic Servers (deprecated in May 2018)
+  servers_enable: false
+  # install agent for New Relic Infrastructure
   infrastructure_enable: false

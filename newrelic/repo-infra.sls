@@ -1,28 +1,4 @@
 # todo: use map.jinja here
-
-# {% if grains['os_family'] == 'Debian' -%}
-# download newrelic.gpg:
-#   file.managed:
-#     - name: /tmp/newrelic.gpg
-#     - source: https://download.newrelic.com/infrastructure_agent/gpg/newrelic-infra.gpg
-#     - source_hash: sha512=c38f57e18045b7f4acf373e8386d602b3fad77da862837c89c54b7c5599de3bb133b72d8a28dbe6e75191edae62432964d1f68382eeb9dbef2a115de65dff926
-#     - keep_source: False
-
-# get_newrelicinfra_gpg_key:
-#   cmd.run:
-#     - name: apt-key add
-#     - filename: /tmp/newrelic.gpg
-#     - user: root
-#     - require:
-#       - file: download newrelic.gpg
-
-# remove newrelic.gpg from /tmp:
-#   file.absent:
-#     - name: /tmp/newrelic.gpg
-#     - require:
-#       - module: get_newrelicinfra_gpg_key
-# # {% endif %}
-
 newrelic-infra-repo:
   {% if salt['grains.get']('os_family') == 'RedHat' -%}
     

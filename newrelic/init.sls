@@ -1,5 +1,7 @@
 include:
+  {% if salt['pkg.list_pkgs']().get('php5', False) or salt['pillar.get']('newrelic:servers_enable', False) -%}
   - .repo
+  {% endif %}
   {% if salt['pkg.list_pkgs']().get('php5', False) -%}
   - .daemon
   - .php

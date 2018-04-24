@@ -22,12 +22,13 @@ remove /tmp/newrelic.gpg:
     - name: /tmp/newrelic.gpg
     - require:
       - module: get_newrelicinfra_gpg_key
+      - file: /tmp/newrelic.gpg
 
 newrelic-infra:
   pkg:
     - installed
     - require:
-      - file: add_licence_key
+      - file: add_infra_licence_key
       - module: get_newrelicinfra_gpg_key
   service.running:
     - watch:

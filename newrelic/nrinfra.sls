@@ -16,14 +16,13 @@ get_newrelicinfra_gpg_key:
     - filename: /tmp/newrelic.gpg
     - user: root
     - require:
-      - file: /tmp/newrelic.gpg
+      - file: download newrelic.gpg 
 
 remove newrelic.gpg from /tmp:
   file.absent:
     - name: /tmp/newrelic.gpg
     - require:
       - module: get_newrelicinfra_gpg_key
-      - file: /tmp/newrelic.gpg
 
 newrelic-infra:
   pkg:
